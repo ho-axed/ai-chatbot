@@ -43,10 +43,8 @@ def showHistory():
     for message in st.session_state.messages:
         with st.chat_message(message["role"], avatar=message["avatar"]):
             st.markdown(message["content"])
-def chatArea():
-    chatContainer = st.container(height=400, border=True)
-    with chatContainer:
-        showHistory()
+def chatArea(): 
+    with st.container(): showHistory()
 
 def generate_answer(complete_chat):
     complete_answer = ""
